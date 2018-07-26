@@ -4,7 +4,7 @@ public class Article {
     private String section;
     private String articleTitle;
     private String webLink;
-    private long publicationDate;
+    private String publicationDate;
 
     /**
      * create an article object
@@ -15,7 +15,7 @@ public class Article {
      * @param publicationDate = date and time when article was published
      */
 
-    public Article(String section, String articleTitle, String webLink, long publicationDate) {
+    public Article(String section, String articleTitle, String webLink, String publicationDate) {
         this.section = section;
         this.articleTitle = articleTitle;
         this.webLink = webLink;
@@ -30,7 +30,7 @@ public class Article {
         return articleTitle;
     }
 
-    public long getPublicationDate() {
+    public String getPublicationDate() {
         return publicationDate;
     }
 

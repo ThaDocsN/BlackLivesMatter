@@ -135,7 +135,7 @@ public final class QueryUtils {
                 JSONObject currentArticle = articlesArray.optJSONObject(i);
                 String section = currentArticle.optString("sectionName");
                 String title = currentArticle.optString("webTitle");
-                long date = currentArticle.optLong("webPublicationDate");
+                String date = currentArticle.optString("webPublicationDate");
                 String link = currentArticle.optString("webUrl");
 
                 Article article = new Article(section, title, link, date);

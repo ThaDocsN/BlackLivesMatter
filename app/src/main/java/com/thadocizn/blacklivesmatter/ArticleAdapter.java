@@ -3,6 +3,7 @@ package com.thadocizn.blacklivesmatter;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,16 +65,9 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.MyViewHo
 
         holder.section.setText(currentArticle.getSection());
         holder.articleTitle.setText(currentArticle.getArticleTitle());
-        // Create a new Date object from the time in milliseconds of the earthquake
-        Date dateObject = new Date(currentArticle.getPublicationDate());
-        String formattedDateTime = formatDateTime(dateObject);
-        holder.publishDate.setText(formattedDateTime);
+        holder.publishDate.setText(currentArticle.getPublicationDate());
     }
 
-    private String formatDateTime(Date dateObject) {
-        SimpleDateFormat dateTimeFormat = new SimpleDateFormat("LLL dd, yyyy, h:mm a");
-        return dateTimeFormat.format(dateObject);
-    }
 
     @Override
     public int getItemCount() {
