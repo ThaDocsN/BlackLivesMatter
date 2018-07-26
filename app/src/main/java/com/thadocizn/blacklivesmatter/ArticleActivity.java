@@ -34,9 +34,9 @@ public class ArticleActivity extends AppCompatActivity implements LoaderManager.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.article_activity);
 
-        RecyclerView articleListView = (RecyclerView) findViewById(R.id.recyclerView);
+        RecyclerView articleListView = findViewById(R.id.recyclerView);
         articleListView.setLayoutManager(new LinearLayoutManager(this));
-        mEmptyStateTextView = (TextView) findViewById(R.id.empty_view);
+        mEmptyStateTextView = findViewById(R.id.empty_view);
 
         adapter = new ArticleAdapter(this, articlesList);
         adapter.setClickListener(this);
@@ -99,6 +99,7 @@ public class ArticleActivity extends AppCompatActivity implements LoaderManager.
         // data set. This will trigger the ListView to update.
         if (articles != null && !articles.isEmpty()) {
             adapter.setArticleInfoList(articles);
+            adapter.notifyDataSetChanged();
             articlesList = new ArrayList<>(articles);
         }else {
             // Set empty state text to display "No articles found."
